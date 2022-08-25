@@ -39,44 +39,27 @@ const { title , name, content} = Astro.props as Props;
       }
       @font-face {
         font-family: Quicksand;
-        src: url("Quicksand.otf");
+        src: url("../assets/Quicksand.otf");
         font-style: normal;
         font-weight: normal;
       }
       ::-webkit-scrollbar {
         width: 0.3rem;
       }
-
       ::-webkit-scrollbar-thumb {
         background-image: var(--astro-gradient);
         border-radius: 1px 10px;
       }
       html {
         font-family: Quicksand, sans-serif;
-        
         font-size: var(--font-size-base);
-        /* color: var(--color-text); */
-        /* background-color: var(--color-bg); */
       }
-
-      /* body {
-        margin: auto;
-        padding: 1em;
-        max-width: 60vw;
-      } */
-
       :global(h1) {
         font-size: var(--font-size-xl);
       }
-
       :global(h2) {
         font-size: var(--font-size-lg);
       }
-
-      /* :global(code) {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      } */
     </style>
   </body>
   <script>
