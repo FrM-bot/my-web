@@ -38,7 +38,7 @@ const { title , name, content} = Astro.props as Props;
         --astro-gradient: linear-gradient(to bottom, #15e8cf, #da62c4);
       }
       @font-face {
-        font-family: "Quicksand";
+        font-family: Quicksand;
         src: url("Quicksand.otf");
         font-style: normal;
         font-weight: normal;
@@ -65,15 +65,15 @@ const { title , name, content} = Astro.props as Props;
         max-width: 60vw;
       } */
 
-      /* :global(h1) {
+      :global(h1) {
         font-size: var(--font-size-xl);
-      } */
+      }
 
-      /* :global(h2) {
+      :global(h2) {
         font-size: var(--font-size-lg);
       }
 
-      :global(code) {
+      /* :global(code) {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       } */
