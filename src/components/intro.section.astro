@@ -2,6 +2,7 @@
 import TextGradient from "../components/text-gradient.astro"
 import { Card } from '../components/react/card'
 import { ButtonLink } from "../components/react/button"
+import Locationicon from "../icons/location.icon.astro";
 ---
 <section class="flex flex-col gap-2">
     <Card>
@@ -15,6 +16,14 @@ import { ButtonLink } from "../components/react/button"
       <p>
         Focused on improvement, targeting to create high quality and useful products for users. I like fullstack development to collaborate in most of the development of projects, thinking about improving the user experience.
       </p>
+    </Card>
+    <Card>
+      <div class="flex gap-1">
+          <Locationicon addClass="inline" />
+          <p class="align-middle">
+            From <TextGradient addClass="font-bold">Argentina</TextGradient>
+          </p>
+      </div>
     </Card>
     <div class="flex flex-wrap gap-2">
       <ButtonLink href="#techstack">
