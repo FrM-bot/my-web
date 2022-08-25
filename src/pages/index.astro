@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TechstackSection from "../components/techstack.section.astro"
+import Footer from '../components/footer.astro'
+import WorkSection from "../components/work.section.astro"
+import IntroSection from "../components/intro.section.astro"
+import ContasctSection from "../components/contasct.section.astro"
+import BlogSection from "../components/blog.section.astro"
+const title = 'FrM-bot'
+const name = 'description'
+const content = 'Fullstack web developer'
+---
+
+<Layout title={title} name={name} content={content}>
+  <main class="pt-11 dark:text-custom-white min-h-screen">
+    <IntroSection />
+    <TechstackSection />
+    <WorkSection />
+    <ContasctSection />
+    <BlogSection />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  :root {
+    --astro-gradient: linear-gradient(0deg, #00ffe1, #a4ef02);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--astro-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 100%;
+    }
+  }
+
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .instructions code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+import TextGradient from "../components/text-gradient.astro"
+import { Card } from '../components/react/card'
+import { TextSubline } from '../components/react/text'
+import RenderTech from "./renderTech.astro"
+
+const technologies = {
+  languages: [
+    'Javascript',
+    'Typescript',
+    'Python',
+    'C#'
+  ],
+  frameworks: [
+    'Next.js',
+    'Tailwind',
+    'Astro',
+    'Express',
+    'Vitest'
+  ],
+  libreries: [
+    'React',
+    'Redux',
+    'JSON Web Token'
+  ],
+  orms: [
+    'Prisma',
+    'Mongoose',
+    'Sequalize'
+  ],
+  dbs: [
+    'Postgre',
+    'MongoDB'
+  ],
+  tools: [
+    'Docker',
+    'Git',
+    'VS code'
+  ]
+}
+---
+
+<section class="my-4" id="techstack">
+    <h2 class="my-6">
+      <Card>
+        <TextGradient>What is my technology stack?</TextGradient>
+      </Card>
+    </h2>
+    <div>
+      <h3><TextSubline>Languages.</TextSubline></h3>
+      <RenderTech technologies={technologies.languages} />
+    </div>
+    <div>
+      <h3><TextSubline>Frameworks.</TextSubline></h3>
+      <RenderTech technologies={technologies.frameworks} />
+    </div>
+    <div>
+      <h3><TextSubline>Libreries.</TextSubline></h3>
+      <RenderTech technologies={technologies.libreries} />
+    </div>
+    <div>
+      <h3><TextSubline>ORM's.</TextSubline></h3>
+      <RenderTech technologies={technologies.orms} />
+    </div>
+    <div>
+      <h3><TextSubline>Database.</TextSubline></h3>
+      <RenderTech technologies={technologies.dbs} />
+    </div>
+    <div>
+      <h3><TextSubline>Tools.</TextSubline></h3>
+      <RenderTech technologies={technologies.tools} />
+    </div>
+  </section>

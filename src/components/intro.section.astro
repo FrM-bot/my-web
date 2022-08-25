@@ -1,0 +1,33 @@
+---
+import TextGradient from "../components/text-gradient.astro"
+import { Card } from '../components/react/card'
+import { ButtonLink } from "../components/react/button"
+---
+<section class="flex flex-col gap-2">
+    <Card>
+        <div class="text-xl font-bold">
+            <h1>Hi, I'm <TextGradient>Franco Maciel.</TextGradient></h1>
+            <TextGradient>Fullstack Wev Developer</TextGradient>
+        </div>
+    </Card>
+
+    <Card>
+      <p>
+        Focused on improvement, targeting to create high quality and useful products for users. I like fullstack development to collaborate in most of the development of projects, thinking about improving the user experience.
+      </p>
+    </Card>
+    <div class="flex flex-wrap gap-2">
+      <ButtonLink href="#techstack">
+        Techstack
+      </ButtonLink>
+      <ButtonLink href="#work">
+        Work
+      </ButtonLink>
+      <ButtonLink href="#contact">
+        Contact
+      </ButtonLink>
+      <ButtonLink href="#blog">
+        Blog
+      </ButtonLink>
+    </div>
+  </section>

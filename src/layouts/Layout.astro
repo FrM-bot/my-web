@@ -1,0 +1,89 @@
+---
+import Header from "../components/header.astro";
+
+export interface Props {
+  title: string
+  name: string
+  content: string
+}
+
+const { title , name, content} = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/AppIcon.svg" />
+    <meta name={name} content={content} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-custom-white dark:bg-custom-dark dark:text-custom-white lg:max-w-60vw max-w-[95w] m-auto p-4">
+    <Header />
+    <slot />
+    <style is:global>
+      :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+        --color-text: #dfdcdb;
+        --color-bg: #242424;
+        --color-border: #ece3df;
+        --custom-cyan: #15e8cf;
+        --custom-dark: #18191c;
+        --custom-dark-2: #242424b3;
+        --custom-white: #fff;
+        --custom-pink: #da62c4;
+        --astro-gradient: linear-gradient(to bottom, #15e8cf, #da62c4);
+      }
+      @font-face {
+        font-family: "Quicksand";
+        src: url("Quicksand.otf");
+        font-style: normal;
+        font-weight: normal;
+      }
+      ::-webkit-scrollbar {
+        width: 0.3rem;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-image: var(--astro-gradient);
+        border-radius: 1px 10px;
+      }
+      html {
+        font-family: Quicksand, sans-serif;
+        
+        font-size: var(--font-size-base);
+        /* color: var(--color-text); */
+        /* background-color: var(--color-bg); */
+      }
+
+      /* body {
+        margin: auto;
+        padding: 1em;
+        max-width: 60vw;
+      } */
+
+      /* :global(h1) {
+        font-size: var(--font-size-xl);
+      } */
+
+      /* :global(h2) {
+        font-size: var(--font-size-lg);
+      }
+
+      :global(code) {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      } */
+    </style>
+  </body>
+  <script>
+    import { setDarkTheme } from "../hooks/setTheme";
+    import { getLocalDarkModeValue } from "../hooks/useLocalStorege";
+    if (getLocalDarkModeValue()) {
+      setDarkTheme()
+    }
+  </script>
+</html>

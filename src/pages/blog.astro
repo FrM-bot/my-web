@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Footer from '../components/footer.astro'
+import BlogSection from "../components/blog.section.astro"
+import { ButtonLink } from '../components/react/button'
+const title = 'FrM-bot'
+const name = 'description'
+const content = 'FrM-bot blog'
+---
+
+<Layout title={title} name={name} content={content}>
+  <main class="dark:text-custom-white min-h-screen py-4">
+    <ButtonLink href="/">
+        Back
+    </ButtonLink>
+    <BlogSection />
+  </main>
+  <Footer />
+</Layout>

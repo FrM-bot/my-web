@@ -1,0 +1,29 @@
+---
+import { Link } from "./react/button"
+import Switch from './react/switch'
+import TextGradient from "./text-gradient.astro";
+---
+
+<header class="sticky top-2 [backdrop-filter:blur(2px)] rounded-lg p-2 shadow-xl bg-[rgba(255,255,255,0.4)] dark:bg-[rgba(32,32,32,0.7)] z-10">
+    
+    <div class="flex items-center justify-between">
+
+        <!-- <h1 class="text-gradient">FrM-bot</h1> -->
+        <Link href="/">
+            <TextGradient addClass='text-3xl font-semibold'>FrM-bot</TextGradient>
+        </Link>
+        
+        <nav class="flex items-center">
+            <ul class="flex gap-4 align-middle h-fit">
+                <li class="flex items-center">
+                    <Link href="/blog" client:load>
+                        blog
+                    </Link>
+                </li>
+                <li class="flex items-center">
+                    <Switch client:load />
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

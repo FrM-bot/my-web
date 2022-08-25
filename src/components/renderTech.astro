@@ -1,0 +1,20 @@
+---
+import { Card } from '../components/react/card'
+interface Props {
+    technologies: string[]
+}
+const { technologies } = Astro.props as Props
+---
+
+<ul class="flex gap-4 my-4 flex-wrap">
+    {technologies.map((name) => (
+        <li>
+          <Card client:visible>
+            <span>
+              {name}
+            </span>
+          </Card>
+        </li>
+      ))
+    }
+</ul>

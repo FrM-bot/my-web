@@ -1,0 +1,41 @@
+---
+import TextGradient from "../components/text-gradient.astro"
+import { Card } from '../components/react/card'
+import { ButtonLink, Link } from "../components/react/button"
+import { TextSubline } from '../components/react/text'
+import { setFormat } from "../hooks/useDateFormat"
+import proyects from '../../proyects.json'
+---
+
+<section class="my-4" id="work">
+    <Card className="my-4">
+        <h2>
+            <TextGradient>My Proyects.</TextGradient>
+        </h2>
+    </Card>
+    <div class="flex gap-4 flex-wrap">
+        {
+            proyects?.map((proyect) => (
+                <Card>
+                    <div class="flex flex-col justify-between items-center gap-2 w-full h-fit">
+                            <Link href={proyect.proyectURL} target="_blank">
+                                {proyect.title}
+                            </Link>
+                            <span class="p-2 text-xs">
+                                {setFormat(proyect.date)}
+                            </span>
+
+                        <div class="flex gap-4 my-2 flex-wrap items-center max-w-[10rem]">
+                            {proyect.technologies.map((technologie) => (
+                                <TextSubline>{technologie}</TextSubline>
+                            ))}
+                        </div>
+                        <div class="grid place-content-center">
+                            <ButtonLink href={proyect.github} target="_blank">Github</ButtonLink>
+                        </div>
+                    </div>
+                </Card>
+            ))
+        }
+    </div>
+</section>

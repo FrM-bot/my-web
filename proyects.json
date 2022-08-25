@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Weather App",
+        "proyectURL": "https://weather-app-lilac-zeta-45.vercel.app",
+        "technologies": [
+            "React"
+        ],
+        "date": "2022-05-23",
+        "github": "https://github.com/FrM-bot/weather-app"
+    },
+    {
+        "title": "Proyecto individual(Dogs)",
+        "proyectURL": "https://pi-dogs-client.vercel.app",
+        "technologies": [
+            "React",
+            "Express",
+            "Sequalize",
+            "PostgreSQL"
+        ],
+        "date": "2022-07-13",
+        "github": "https://github.com/FrM-bot/Pi-Dogs-Client"
+    },
+    {
+        "title": "Proyecto final(Wallet.)",
+        "proyectURL": "https://henry-pf-client.vercel.app",
+        "technologies": [
+            "React",
+            "Express",
+            "Prisma",
+            "PostgreSQL",
+            "Firebase",
+            "JWT"
+        ],
+        "date": "2022-08-11",
+        "github": "https://github.com/facuperezbri/henry-pf-client"
+    }
+]

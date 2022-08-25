@@ -1,0 +1,18 @@
+---
+interface Props {
+    addClass?: string
+}
+
+const { addClass } = Astro.props as Props
+// const Labels = {
+//     h1: 'h1',
+//     p: 'p',
+//     default: 'span'
+// }
+
+// const Element = Labels[label]
+const defaultClass = "bg-clip-text text-[#fff0] bg-gradient-to-l from-[#da62c4] to-custom-cyan"
+const classMod = addClass ? `${defaultClass} ${addClass}` : defaultClass
+---
+
+<span class={classMod}><slot /></span>
