@@ -5,6 +5,7 @@ import { ButtonLink, Link } from "../components/react/button"
 import { TextSubline } from '../components/react/text'
 import { setFormat } from "../hooks/useDateFormat"
 import proyects from '../../proyects.json'
+import GithubIcon from "../icons/github.icon.astro"
 ---
 
 <section class="my-4" id="work">
@@ -31,7 +32,7 @@ import proyects from '../../proyects.json'
                             ))}
                         </div>
                         <div class="grid place-content-center">
-                            <ButtonLink href={proyect.github} target="_blank">Github</ButtonLink>
+                            <ButtonLink href={proyect.github} target="_blank"><GithubIcon width={35} height={35} /></ButtonLink>
                         </div>
                     </div>
                 </Card>
