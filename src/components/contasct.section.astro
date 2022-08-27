@@ -1,11 +1,13 @@
 ---
-import TextGradient from "../components/text-gradient.astro";
-import { Card } from "../components/react/card";
-import { ButtonLink } from "../components/react/button";
-import { TextSubline } from "../components/react/text";
-import GithubIcon from "../icons/github.icon.astro";
-import LinkedinIcon from "../icons/linkedin.icon.astro";
-import MailIcon from "../icons/mail.icon.astro";
+import TextGradient from "../components/text-gradient.astro"
+import { Card } from "../components/react/card"
+import { ButtonLink, Button } from "../components/react/button"
+import { TextSubline } from "../components/react/text"
+import Form from './react/form'
+import GithubIcon from "../icons/github.icon.astro"
+import LinkedinIcon from "../icons/linkedin.icon.astro"
+import MailIcon from "../icons/mail.icon.astro"
+
 const mail = 'damianmaciel0@gmail.com'
 ---
 
@@ -35,4 +37,5 @@ const mail = 'damianmaciel0@gmail.com'
             </ButtonLink>
         </div>
     </div>
+    <Form client:visible />
 </section>

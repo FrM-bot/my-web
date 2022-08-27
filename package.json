@@ -1,14 +1,16 @@
 {
-  "name": "@example/basics",
+  "name": "frm-bot",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write --plugin-search-dir=. . "
+    "format": "prettier --write --plugin-search-dir=. . ",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "devDependencies": {
     "@astrojs/react": "^1.0.0",

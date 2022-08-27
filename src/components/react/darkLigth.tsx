@@ -1,7 +1,5 @@
 import { lazy, Suspense } from 'react'
 import type { FC } from 'react'
-// import SVGDark from '../icons/SVGDark'
-// import SVGLigth from '../icons/SVGLigth'
 interface Props {
     darkmode: boolean
 }
