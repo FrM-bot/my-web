@@ -29,9 +29,23 @@
             "Prisma",
             "PostgreSQL",
             "Firebase",
-            "JWT"
+            "JWT",
+            "Tailwind"
         ],
         "date": "2022-08-11",
         "github": "https://github.com/facuperezbri/henry-pf-client"
+    },
+    {
+        "title": "Anime app",
+        "proyectURL": "https://anime-app-eight.vercel.app",
+        "technologies": [
+            "Next js",
+            "SWR",
+            "Tailwind",
+            "Vitest",
+            "Playwright"
+        ],
+        "date": "2022-09-21",
+        "github": "https://github.com/FrM-bot/anime-app"
     }
 ]
