@@ -35,7 +35,7 @@ const { title , name, content} = Astro.props as Props;
         --custom-dark-2: #242424b3;
         --custom-white: #fff;
         --custom-pink: #da62c4;
-        --astro-gradient: linear-gradient(to bottom, #15e8cf, #da62c4);
+        --astro-gradient: linear-gradient(to bottom, transparent, #15e8cf, #da62c4, transparent);
       }
       @font-face {
         font-family: Quicksand;
@@ -44,7 +44,7 @@ const { title , name, content} = Astro.props as Props;
         font-weight: normal;
       }
       ::-webkit-scrollbar {
-        width: 0.3rem;
+        width: 0.2rem;
       }
       ::-webkit-scrollbar-thumb {
         background-image: var(--astro-gradient);
