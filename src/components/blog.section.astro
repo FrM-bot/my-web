@@ -1,16 +1,40 @@
 ---
-import { Card } from '../components/react/card'
-import TextGradient from './text-gradient.astro'
+import { Card } from "../components/react/card"
+import TextGradient from "./text-gradient.astro"
+export interface Post {
+  title: string
+  date: string
+  description?: string
+  url?: string
+}
+
+interface Props {
+  posts: Post[]
+}
+
+const { posts } = Astro.props as Props
 ---
-<section id="blog">
-    <Card className="my-4">
-        <h2>
-            <TextGradient>Blog.</TextGradient>
-        </h2>
-    </Card>
-    <Card>
-        <article>
-            Writing the article...
-        </article>
-    </Card>
+
+<section id='blog'>
+  <Card className='my-4'>
+    <h2>
+      <TextGradient>Blog.</TextGradient>
+    </h2>
+  </Card>
+  <div>
+    {
+      posts.map((post) => (
+        <Card>
+          <a href={post.url}>
+            <article class='flex flex-col gap-1'>
+              <h2 class='font-semibold'>{post.title}</h2>
+              {post.description && <p class='text-sm'>{post.description}</p>}
+              <TextGradient addClass='font-extralight text-[0.7rem]'>{post.date}</TextGradient>
+            </article>
+          </a>
+        </Card>
+      ))
+    }
+  </div>
+  <!-- <article>Writing the article...</article> -->
 </section>

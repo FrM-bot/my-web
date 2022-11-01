@@ -1,5 +1,6 @@
 ---
-import Header from "../components/header.astro";
+import Footer from "@components/footer.astro"
+import Header from "../components/header.astro"
 
 export interface Props {
   title: string
@@ -7,21 +8,24 @@ export interface Props {
   content: string
 }
 
-const { title , name, content} = Astro.props as Props;
+const { title, name, content } = Astro.props as Props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang='en' class='scroll-smooth'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/AppIcon.svg" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/x-icon' href='/AppIcon.svg' />
     <meta name={name} content={content} />
     <title>{title}</title>
   </head>
-  <body class="bg-custom-white dark:bg-custom-dark dark:text-custom-white lg:max-w-60vw max-w-[95w] m-auto p-4">
+  <body
+    class='bg-custom-white dark:bg-custom-dark dark:text-custom-white lg:max-w-60vw max-w-[95w] m-auto p-4'
+  >
     <Header />
     <slot />
+    <Footer />
     <style is:global>
       :root {
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -35,7 +39,20 @@ const { title , name, content} = Astro.props as Props;
         --custom-dark-2: #242424b3;
         --custom-white: #fff;
         --custom-pink: #da62c4;
-        --astro-gradient: linear-gradient(to bottom, transparent, #15e8cf, #da62c4, transparent);
+        --astro-gradient: linear-gradient(
+          to bottom,
+          transparent,
+          #15e8cf,
+          #da62c4,
+          transparent
+        );
+        --astro-gradient-left: linear-gradient(
+          to left,
+          transparent,
+          #15e8cf,
+          #da62c4,
+          transparent
+        );
       }
       @font-face {
         font-family: Quicksand;
@@ -46,6 +63,13 @@ const { title , name, content} = Astro.props as Props;
       ::-webkit-scrollbar {
         width: 0.2rem;
       }
+      ::-webkit-scrollbar:horizontal {
+        height: 3px;
+      }
+      ::-webkit-scrollbar-thumb:horizontal {
+        background-image: var(--astro-gradient-left);
+        border-radius: 1px 10px;
+      }
       ::-webkit-scrollbar-thumb {
         background-image: var(--astro-gradient);
         border-radius: 1px 10px;
@@ -53,6 +77,10 @@ const { title , name, content} = Astro.props as Props;
       html {
         font-family: Quicksand, sans-serif;
         font-size: var(--font-size-base);
+      }
+      pre {
+        padding: .5rem;
+        border-radius: .5rem;
       }
       :global(h1) {
         font-size: var(--font-size-xl);
@@ -63,8 +91,8 @@ const { title , name, content} = Astro.props as Props;
     </style>
   </body>
   <script>
-    import { setDarkTheme } from "../hooks/setTheme";
-    import { getLocalDarkModeValue } from "../hooks/useLocalStorege";
+    import { setDarkTheme } from "../hooks/setTheme"
+    import { getLocalDarkModeValue } from "../hooks/useLocalStorege"
     if (getLocalDarkModeValue()) {
       setDarkTheme()
     }

@@ -1,0 +1,46 @@
+---
+title: Componentes reutilizables con tailwind
+description: Lorem ipsum dolor sit amet - 2
+layout: ../../../layouts/LayoutPost.astro
+date: "09 Aug 2022"
+---
+
+import { Button } from "../../../components/react/button"
+import CodeContainer from "../../../components/react/codeContainer"
+import PreviewContainer from "../../../components/react/PreviewContainer"
+
+# Componentes reutilizables con react y tailwind
+
+## Boton Reutilizable
+
+<CodeContainer client:load>
+```tsx
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactElement } from 'react'
+
+interface Props {
+    children: ReactElement | string
+    onClick?: () => void
+    props?: ButtonHTMLAttributes<HTMLButtonElement>
+    className?: string
+}
+
+function classNames (...classes: string[]) {
+    return classes.filter(Boolean).join(' ')
+}
+
+export const Button: FC<Props> = ({ children, onClick, props, className }) => {
+  return (
+        <button
+            className={classNames(className ?? '', 'dark:text-gray-400 dark:bg-custom-dark-2 dark:hover:bg-gray-700 outline-none py-[0.4375rem] px-2 rounded-md text-sm flex justify-center items-center duration-300 hover:shadow-xl bg-[rgba(255,255,255,0.4)] border-[1px] border-[rgba(180,178,178,0.4)] dark:border-custom-dark')}
+            onClick={onClick}
+            {...props}
+        >
+            {children}
+        </button>
+  )
+}
+```
+</CodeContainer>
+<PreviewContainer>
+    <Button>Button</Button>
+</PreviewContainer>

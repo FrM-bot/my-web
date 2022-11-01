@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Footer from '../../components/footer.astro'
+import BlogSection from "../../components/blog.section.astro"
+import { ButtonLink } from '../../components/react/button'
+const title = 'FrM-bot'
+const name = 'description'
+const content = 'FrM-bot blog'
+const postsEs = await Astro.glob('./es/*.mdx')
+// console.log(postsEs[0].file, 'f', postsEs[0].url, 'f', postsEs[0])
+---
+
+<Layout title={title} name={name} content={content}>
+  <main class="min-h-[75vh] pb-2">
+    <div class='my-2'>
+      <ButtonLink href='/'>Back</ButtonLink>
+    </div>
+    <BlogSection posts={postsEs?.map(post => ({ title: post.frontmatter.title, description: post.frontmatter.description, date: post.frontmatter.date, url: post.url }))} />
+  </main>
+</Layout>
