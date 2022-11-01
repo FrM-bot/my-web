@@ -47,5 +47,15 @@
         ],
         "date": "2022-09-21",
         "github": "https://github.com/FrM-bot/anime-app"
+    },
+    {
+         "title": "Music Downloader",
+        "proyectURL": "https://music-downloader-3k7u.vercel.app",
+        "technologies": [
+            "Next js",
+            "Tailwind"
+        ],
+        "date": "2022-11-1",
+        "github": "https://github.com/FrM-bot/music-downloader"
     }
 ]
